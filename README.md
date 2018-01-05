@@ -18,12 +18,20 @@ Dependencies
 
 None
 
-Example Playbook
+Example Configuration
 ----------------
 
-    - hosts: servers
-      roles:
-         - { role: smartlogic.firewall }
+
+```yaml
+firewall_ports:
+  - rule: allow
+    port: http
+  - rule: allow
+    port: https
+  - rule: allow
+    port: 8080
+    src: 127.0.0.1
+```
 
 License
 -------
