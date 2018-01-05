@@ -1,0 +1,11 @@
+---
+- name: "Allow ports"
+  ufw:
+    rule: "{{ item.rule }}"
+    port: "{{ item.port }}"
+    src: "{{ item.src | default('any') }}"
+  with_items: "{{ firewall_ports }}"
+
+- name: "Enable the firewall"
+  ufw:
+    state: enabled
