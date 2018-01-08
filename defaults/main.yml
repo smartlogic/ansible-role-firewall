@@ -1,2 +1,3 @@
 ---
 firewall_ports: []
+firewall_allow_ssh: true

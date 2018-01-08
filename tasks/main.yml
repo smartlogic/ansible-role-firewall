@@ -1,4 +1,10 @@
 ---
+- name: "Allow ssh"
+  ufw:
+    rule: allow
+    port: ssh
+  when: firewall_allow_ssh == True
+
 - name: "Allow ports"
   ufw:
     rule: "{{ item.rule }}"
