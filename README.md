@@ -3,6 +3,14 @@ Firewall
 
 Open ports based on a variable.
 
+## Install to requirements.yml
+
+```
+- src: git+git@github.com:smartlogic/ansible-role-firewall
+  name: firewall
+  version: 0.1.1
+```
+
 Requirements
 ------------
 
