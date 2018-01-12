@@ -4,6 +4,7 @@
     rule: allow
     port: ssh
   when: firewall_allow_ssh == True
+  become: true
 
 - name: "Allow ports"
   ufw:
@@ -11,7 +12,9 @@
     port: "{{ item.port }}"
     src: "{{ item.src | default('any') }}"
   with_items: "{{ firewall_ports }}"
+  become: true
 
 - name: "Enable the firewall"
   ufw:
     state: enabled
+  become: true
